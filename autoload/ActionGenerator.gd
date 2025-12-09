@@ -77,7 +77,7 @@ func generate_next_act() -> void:
 
 ## Forces a visit to a given location id using action system.
 ## Used by Map when selecting a location.
-func generate_visition_location(location_id: String, autosave_before_visit = true) -> void:
+func generate_visit_location(location_id: String, autosave_before_visit = true) -> void:
 	var action_data: Array[Dictionary] = [{
 		Scripts.ACTION_VISIT_LOCATION: {
 			"location_id": location_id,

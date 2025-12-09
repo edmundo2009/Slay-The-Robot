@@ -88,7 +88,7 @@ func _on_map_location_button_up(map_location: MapLocation):
 		# must be adjacent to player location
 		if Global.get_next_locations().has(map_location.location_data):
 			# visit the location
-			ActionGenerator.generate_visition_location(map_location.location_data.location_id)
+			ActionGenerator.generate_visit_location(map_location.location_data.location_id)
 	
 func _on_map_location_selected(location_data: LocationData):
 	# disable travel mode
