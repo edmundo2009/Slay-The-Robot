@@ -67,6 +67,8 @@ func _get_modified_filepath(partial_filepath: String) -> String:
 func get_files_in_directory(partial_dir_path: String):
 	var full_path: String = _get_modified_filepath(partial_dir_path)
 	DirAccess.make_dir_absolute(full_path)
+	if not DirAccess.dir_exists_absolute(full_path):
+		DirAccess.make_dir_recursive_absolute(full_path)
 	var dir = DirAccess.open(full_path)
 	return dir.get_files()
 
