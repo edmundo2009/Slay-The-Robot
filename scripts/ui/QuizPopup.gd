@@ -42,10 +42,22 @@ func _build_ui() -> void:
 	question_label.bbcode_enabled = true
 	vbox.add_child(question_label)
 	
+	# Answer Container (Manual Positioning)
 	answer_container = HBoxContainer.new()
-	answer_container.size_flags_vertical = Control.SIZE_SHRINK_END
-	answer_container.custom_minimum_size.y = 100
-	vbox.add_child(answer_container)
+	answer_container.alignment = BoxContainer.ALIGNMENT_CENTER
+	answer_container.add_theme_constant_override("separation", 20)
+	
+	# Anchor to bottom of panel
+	panel.add_child(answer_container)
+	answer_container.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
+	answer_container.offset_top = -120
+	answer_container.offset_bottom = -20
+	
+	# Debug Background
+	var bg = ColorRect.new()
+	bg.color = Color(1, 1, 0, 0.2) # Yellow debug
+	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	answer_container.add_child(bg)
 	
 	feedback_label = Label.new()
 	feedback_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -75,11 +87,16 @@ func _update_display() -> void:
 		c.queue_free()
 		
 	var options = current_question.get("options", [])
+	print("[QuizPopup] Updating Display. Question: ", q_text) # DEBUG
+	print("[QuizPopup] Options Count: ", options.size()) # DEBUG
 	for i in range(options.size()):
 		var opt = options[i]
+		print("[QuizPopup] Option ", i, ": ", opt) # DEBUG
 		var btn = Button.new()
 		btn.text = opt.get("text", "?")
-		btn.custom_minimum_size = Vector2(200, 50)
+		btn.custom_minimum_size = Vector2(250, 80) # Larger buttons
+		btn.add_theme_font_size_override("font_size", 24) # Ensure readable
+		btn.modulate = Color(1, 0.5, 0.5) # Reddish tint for visibility
 		btn.pressed.connect(func(): _on_answer(i))
 		answer_container.add_child(btn)
 

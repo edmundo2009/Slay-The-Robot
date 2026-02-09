@@ -284,8 +284,11 @@ func _play_card(card_play_request: CardPlayRequest) -> void:
 
 	# --- MENKYO QUIZ INTERCEPT ---
 	# Check if we should interrupt for a quiz
-	if GameManager.current_game_mode == GameManager.GameMode.STUDY:
+	# Enable for both GAME and STUDY modes for "Road to Menkyo" main loop
+	print("[Hand.gd] Checking Quiz Intercept. GameMode: ", GameManager.current_game_mode)
+	if GameManager.current_game_mode == GameManager.GameMode.STUDY or GameManager.current_game_mode == GameManager.GameMode.GAME:
 		var q_cat = card_play_request.card_data.question_category
+		print("[Hand.gd] Card: ", card_play_request.card_data.card_name, " Category: '", q_cat, "'")
 		if q_cat != "":
 			var question = QuestionFetcher.get_random_question(q_cat)
 			if not question.is_empty():

@@ -1,7 +1,7 @@
 # Road to Menkyo - Implementation Kickoff
 
 **Date:** 2026-02-10  
-**Status:** Ready to Begin
+**Status:** Phase 3 Completed (Visual Reskin) / Ready for Phase 4
 
 ---
 
@@ -19,8 +19,8 @@
 ## Phase 1: Foundation (Current Sprint)
 
 ### 1.1 Import Glossary
-- [ ] Copy `glossary.json` to `_data_normalized/`
-- [ ] Verify schema: `{ "term": { "en": "...", "kana": "..." } }`
+- [x] Copy `glossary.json` to `_data_normalized/` (Glossary data pending, but structure ready)
+- [x] Verify schema: `{ "term": { "en": "...", "kana": "..." } }`
 
 ### 1.2 Create GameManager.gd
 - [x] Add to `autoload/` as singleton
@@ -47,19 +47,19 @@
 ## Phase 2: Quiz Intercept
 
 ### 2.1 BattleScene.gd Integration
-- [ ] Pause game on card play
-- [ ] Instantiate QuizPopup with question data
-- [ ] Handle correct/incorrect signals
-- [ ] Resume game after answer
+- [x] Pause game on card play
+- [x] Instantiate QuizPopup with question data
+- [x] Handle correct/incorrect signals
+- [x] Resume game after answer
 
 ### 2.2 Question Fetcher
-- [ ] Load questions from `_data_normalized/*.json`
-- [ ] Match card category to question `category_path`
-- [ ] Random selection within category
+- [x] Load questions from `_data_normalized/*.json`
+- [x] Match card category to question `category_path`
+- [x] Random selection within category
 
 ### 2.3 Feedback System
-- [ ] ○ stamp animation (correct)
-- [ ] ✕ stamp animation (wrong)
+- [x] ○ stamp animation (correct)
+- [x] ✕ stamp animation (wrong)
 - [ ] Screen shake on wrong (GAME mode only)
 
 ---
@@ -67,15 +67,15 @@
 ## Phase 3: Visual Reskin
 
 ### 3.1 Assets
-- [ ] Pastel card backgrounds
-- [ ] Traffic-themed map icons
-- [ ] Noto Sans JP font import
+- [x] Pastel card backgrounds
+- [x] Traffic-themed map icons
+- [x] Noto Sans JP font import
 
 ### 3.2 Map Nodes
-- [ ] 🚦 Normal → Traffic light
-- [ ] 👮 Elite → Police officer
-- [ ] 🅿️ Rest → Parking sign
-- [ ] 🏛️ Boss → Exam center
+- [x] 🚦 Normal → Traffic light
+- [x] 👮 Elite → Police officer
+- [x] 🅿️ Rest → Parking sign
+- [x] 🏛️ Boss → Exam center
 
 ---
 
@@ -124,7 +124,14 @@ var new_path = mapping.path_mapping[old_path]
 
 ---
 
-## First Task: GameManager.gd
+## Next Steps: Phase 4 (Polish & Content)
+ 
+ - [ ] **Glossary Integration**: Implement tap-to-learn.
+ - [ ] **Sound Effects**: Add quiz success/fail sounds.
+ - [ ] **VFX**: Add screen shake and particle effects.
+ - [ ] **Content Balancing**: Adjust question pools and difficulty.
+ 
+ <!-- content below removed -->
 
 Start with this skeleton:
 

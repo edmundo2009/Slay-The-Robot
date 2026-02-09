@@ -2097,8 +2097,10 @@ func get_player_data_from_prototype(player_id: String) -> PlayerData:
 func add_test_cards() -> void:
 	# Basic attack card
 	var attack_card: CardData = CardData.new("card_attack_basic")
+	attack_card.question_category = "Navitime" # Added for Road to Menkyo
 	attack_card.card_name = "Basic Attack"
 	attack_card.card_color_id = "color_white"
+	attack_card.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	attack_card.card_description = "Attack for [damage] damage [number_of_attacks] times"
 	attack_card.card_type = CardData.CARD_TYPES.ATTACK
 	attack_card.card_rarity = CardData.CARD_RARITIES.BASIC
@@ -2111,12 +2113,15 @@ func add_test_cards() -> void:
 	
 	register_rod(attack_card)
 	
+
+	
 	# Attack card with rng damage
 	var card_attack_rng: CardData = CardData.new("card_attack_rng")
+	card_attack_rng.question_category = "Navitime"
 
 	card_attack_rng.card_name = "RNG Attack"
 	card_attack_rng.card_color_id = "color_blue"
-	card_attack_rng.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	card_attack_rng.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	card_attack_rng.card_description = "Attack for [damage] + [damage_random] damage"
 	card_attack_rng.card_type = CardData.CARD_TYPES.ATTACK
 	card_attack_rng.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -2131,9 +2136,10 @@ func add_test_cards() -> void:
 	
 	# Attack card that applies poison like effect
 	var corrosion_attack_card: CardData = CardData.new("card_attack_corrosion")
+	corrosion_attack_card.question_category = "Navitime"
 	corrosion_attack_card.card_name = "Corrosion"
 	corrosion_attack_card.card_color_id = "color_green"
-	corrosion_attack_card.card_texture_path = "external/sprites/cards/green/card_green.png"
+	corrosion_attack_card.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	corrosion_attack_card.card_description = "Do [damage] damage and apply [status_charge_amount] corrosion"
 	corrosion_attack_card.card_type = CardData.CARD_TYPES.ATTACK
 	corrosion_attack_card.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -2156,7 +2162,7 @@ func add_test_cards() -> void:
 	var card_bomb: CardData = CardData.new("card_bomb")
 	card_bomb.card_name = "Bomb"
 	card_bomb.card_color_id = "color_green"
-	card_bomb.card_texture_path = "external/sprites/cards/green/card_green.png"
+	card_bomb.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	card_bomb.card_description = "In [status_charge_amount] turns, do [status_secondary_charge_amount] damage to all enemies"
 	card_bomb.card_requires_target = false
 	card_bomb.card_type = CardData.CARD_TYPES.SKILL
@@ -2172,7 +2178,7 @@ func add_test_cards() -> void:
 	var card_duplicate_plays: CardData = CardData.new("card_duplicate_plays")
 	card_duplicate_plays.card_name = "Duplicate Plays"
 	card_duplicate_plays.card_color_id = "color_green"
-	card_duplicate_plays.card_texture_path = "external/sprites/cards/green/card_green.png"
+	card_duplicate_plays.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	card_duplicate_plays.card_description = "Duplicate the first card played each turn"
 	card_duplicate_plays.card_requires_target = false
 	card_duplicate_plays.card_type = CardData.CARD_TYPES.POWER
@@ -2188,7 +2194,7 @@ func add_test_cards() -> void:
 	var card_duplicate_attacks: CardData = CardData.new("card_duplicate_attacks")
 	card_duplicate_attacks.card_name = "Duplicate Atttacks"
 	card_duplicate_attacks.card_color_id = "color_red"
-	card_duplicate_attacks.card_texture_path = "external/sprites/cards/red/card_red.png"
+	card_duplicate_attacks.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	card_duplicate_attacks.card_description = "Duplicate the next [status_charge_amount] attacks this turn"
 	card_duplicate_attacks.card_requires_target = false
 	card_duplicate_attacks.card_type = CardData.CARD_TYPES.SKILL
@@ -2223,7 +2229,7 @@ func add_test_cards() -> void:
 	var ignore_damage_increase_attack_card: CardData = CardData.new("ignore_damage_increase_attack_card")
 	ignore_damage_increase_attack_card.card_name = "Flat Damage Attack"
 	ignore_damage_increase_attack_card.card_color_id = "color_red"
-	ignore_damage_increase_attack_card.card_texture_path = "external/sprites/cards/red/card_red.png"
+	ignore_damage_increase_attack_card.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	ignore_damage_increase_attack_card.card_description = "Attack for [damage] damage [number_of_attacks] times"
 	ignore_damage_increase_attack_card.card_type = CardData.CARD_TYPES.ATTACK
 	ignore_damage_increase_attack_card.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -2240,7 +2246,7 @@ func add_test_cards() -> void:
 	var card_weaken_enemies: CardData = CardData.new("card_weaken_enemies")
 	card_weaken_enemies.card_name = "Weaken Enemies"
 	card_weaken_enemies.card_color_id = "color_red"
-	card_weaken_enemies.card_texture_path = "external/sprites/cards/red/card_red.png"
+	card_weaken_enemies.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	card_weaken_enemies.card_description = "Apply [status_charge_amount] weaknesss"
 	card_weaken_enemies.card_type = CardData.CARD_TYPES.SKILL
 	card_weaken_enemies.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -2260,7 +2266,7 @@ func add_test_cards() -> void:
 	var card_vulnerable_enemies: CardData = CardData.new("card_vulnerable_enemies")
 	card_vulnerable_enemies.card_name = "Vulnerable Enemies"
 	card_vulnerable_enemies.card_color_id = "color_red"
-	card_vulnerable_enemies.card_texture_path = "external/sprites/cards/red/card_red.png"
+	card_vulnerable_enemies.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	card_vulnerable_enemies.card_description = "Apply [status_charge_amount] vulnerable"
 	card_vulnerable_enemies.card_type = CardData.CARD_TYPES.SKILL
 	card_vulnerable_enemies.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -2280,7 +2286,7 @@ func add_test_cards() -> void:
 	var card_preserve_block: CardData = CardData.new("card_preserve_block")
 	card_preserve_block.card_name = "Preserve Block"
 	card_preserve_block.card_color_id = "color_green"
-	card_preserve_block.card_texture_path = "external/sprites/cards/green/card_green.png"
+	card_preserve_block.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	card_preserve_block.card_description = "Block will no longer reset"
 	card_preserve_block.card_type = CardData.CARD_TYPES.POWER
 	card_preserve_block.card_rarity = CardData.CARD_RARITIES.RARE
@@ -2328,8 +2334,10 @@ func add_test_cards() -> void:
 	
 	# Basic block card
 	var block_card: CardData = CardData.new("card_block_basic")
+	block_card.question_category = "Signs" # Added for Road to Menkyo
 	block_card.card_name = "Basic Block"
 	block_card.card_color_id = "color_white"
+	block_card.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	block_card.card_description = "Add [block] block"
 	block_card.card_type = CardData.CARD_TYPES.SKILL
 	block_card.card_rarity = CardData.CARD_RARITIES.BASIC
@@ -2353,7 +2361,7 @@ func add_test_cards() -> void:
 	var draw_card: CardData = CardData.new("card_draw")
 	draw_card.card_name = "Draw"
 	draw_card.card_color_id = "color_blue"
-	draw_card.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	draw_card.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	draw_card.card_description = "Draw [draw_count] cards"
 	draw_card.card_type = CardData.CARD_TYPES.SKILL
 	draw_card.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -2368,9 +2376,10 @@ func add_test_cards() -> void:
 	
 	# Reshuffle and draw
 	var card_reshuffle_draw: CardData = CardData.new("card_reshuffle_draw")
+	card_reshuffle_draw.question_category = "Navitime"
 	card_reshuffle_draw.card_name = "Reshuffle and Draw"
 	card_reshuffle_draw.card_color_id = "color_blue"
-	card_reshuffle_draw.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	card_reshuffle_draw.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	card_reshuffle_draw.card_description = "Shuffle discard back into draw pile.\nDraw [draw_count] cards"
 	card_reshuffle_draw.card_type = CardData.CARD_TYPES.SKILL
 	card_reshuffle_draw.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -2389,7 +2398,7 @@ func add_test_cards() -> void:
 	var card_add_consumable: CardData = CardData.new("card_add_consumable")
 	card_add_consumable.card_name = "Add Consumable"
 	card_add_consumable.card_color_id = "color_blue"
-	card_add_consumable.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	card_add_consumable.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	card_add_consumable.card_description = "Generate a random consumable"
 	card_add_consumable.card_type = CardData.CARD_TYPES.SKILL
 	card_add_consumable.card_rarity = CardData.CARD_RARITIES.RARE
@@ -2437,9 +2446,10 @@ func add_test_cards() -> void:
 	# Attack that heals for unblocked damage
 	# demonstrates storing values into CardPlayRequest for use by other actions
 	var card_attack_heal_unblocked_damage: CardData = CardData.new("card_attack_heal_unblocked_damage")
+	card_attack_heal_unblocked_damage.question_category = "Navitime"
 	card_attack_heal_unblocked_damage.card_name = "Healing Attack"
 	card_attack_heal_unblocked_damage.card_color_id = "color_blue"
-	card_attack_heal_unblocked_damage.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	card_attack_heal_unblocked_damage.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	card_attack_heal_unblocked_damage.card_description = "Attack all enemies for [damage] damage and heal for unblocked damage\nExhaust"
 	card_attack_heal_unblocked_damage.card_type = CardData.CARD_TYPES.ATTACK
 	card_attack_heal_unblocked_damage.card_rarity = CardData.CARD_RARITIES.UNCOMMON
@@ -2470,7 +2480,7 @@ func add_test_cards() -> void:
 	var improving_attack_card: CardData = CardData.new("card_improving_attack")
 	improving_attack_card.card_name = "Improving Attack"
 	improving_attack_card.card_color_id = "color_blue"
-	improving_attack_card.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	improving_attack_card.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	improving_attack_card.card_description = "Block for [block] and attack for [damage] damage. Improves damage and block by 2 on kill"
 	improving_attack_card.card_type = CardData.CARD_TYPES.ATTACK
 	improving_attack_card.card_rarity = CardData.CARD_RARITIES.UNCOMMON
@@ -2506,6 +2516,7 @@ func add_test_cards() -> void:
 	
 	# Block that improves temporarily when retained
 	var improving_retain_block_card: CardData = CardData.new("improving_retain_block_card")
+	improving_retain_block_card.question_category = "Signs"
 	improving_retain_block_card.card_name = "Retain Block"
 	improving_retain_block_card.card_color_id = "color_purple"
 	improving_retain_block_card.card_description = "Retain. Block for [block]. Improves block by 3 on retain"
@@ -2544,7 +2555,7 @@ func add_test_cards() -> void:
 	var self_attaching_attack_card: CardData = CardData.new("self_attaching_attack_card")
 	self_attaching_attack_card.card_name = "Self Attaching Attack"
 	self_attaching_attack_card.card_color_id = "color_blue"
-	self_attaching_attack_card.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	self_attaching_attack_card.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	self_attaching_attack_card.card_description = "At the start of combat attaches itself to a random enemy\nAttack for [damage] damage"
 	self_attaching_attack_card.card_type = CardData.CARD_TYPES.ATTACK
 	self_attaching_attack_card.card_rarity = CardData.CARD_RARITIES.UNCOMMON
@@ -2575,7 +2586,7 @@ func add_test_cards() -> void:
 	var attack_with_conditional_draw_card: CardData = CardData.new("attack_with_conditional_draw_card")
 	attack_with_conditional_draw_card.card_name = "Attack With Draw"
 	attack_with_conditional_draw_card.card_color_id = "color_red"
-	attack_with_conditional_draw_card.card_texture_path = "external/sprites/cards/red/card_red.png"
+	attack_with_conditional_draw_card.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	attack_with_conditional_draw_card.card_description = "Attack for [damage]. Draw 2 cards if played when 5 cards in hand, otherwise draw 1"
 	attack_with_conditional_draw_card.card_type = CardData.CARD_TYPES.ATTACK
 	attack_with_conditional_draw_card.card_rarity = CardData.CARD_RARITIES.RARE
@@ -2626,7 +2637,7 @@ func add_test_cards() -> void:
 	var attack_with_conditional_block_card: CardData = CardData.new("attack_with_conditional_block_card")
 	attack_with_conditional_block_card.card_name = "Block on Attack"
 	attack_with_conditional_block_card.card_color_id = "color_red"
-	attack_with_conditional_block_card.card_texture_path = "external/sprites/cards/red/card_red.png"
+	attack_with_conditional_block_card.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	attack_with_conditional_block_card.card_description = "Attack for [damage]. If the targeted enemy is attacking, block for [block]"
 	attack_with_conditional_block_card.card_type = CardData.CARD_TYPES.ATTACK
 	attack_with_conditional_block_card.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -2704,7 +2715,7 @@ func add_test_cards() -> void:
 	var cards_played_attack_card: CardData = CardData.new("cards_played_attack_card")
 	cards_played_attack_card.card_name = "Cards Played Attack"
 	cards_played_attack_card.card_color_id = "color_red"
-	cards_played_attack_card.card_texture_path = "external/sprites/cards/red/card_red.png"
+	cards_played_attack_card.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	cards_played_attack_card.card_description = "Do [damage] damage, increased by 2 for each card played this combat"
 	cards_played_attack_card.card_type = CardData.CARD_TYPES.ATTACK
 	cards_played_attack_card.card_rarity = CardData.CARD_RARITIES.RARE
@@ -2843,7 +2854,7 @@ func add_test_cards() -> void:
 	var improving_block_card: CardData = CardData.new("card_improving_block")
 	improving_block_card.card_name = "Improving Block"
 	improving_block_card.card_color_id = "color_green"
-	improving_block_card.card_texture_path = "external/sprites/cards/green/card_green.png"
+	improving_block_card.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	improving_block_card.card_description = "Top Deck. Add [block] block. Improve amount blocked by 1 this combat"
 	improving_block_card.card_type = CardData.CARD_TYPES.SKILL
 	improving_block_card.card_rarity = CardData.CARD_RARITIES.RARE
@@ -2877,7 +2888,7 @@ func add_test_cards() -> void:
 	var card_law: CardData = CardData.new("card_law")
 	card_law.card_name = "Law"
 	card_law.card_color_id = "color_red"
-	card_law.card_texture_path = "external/sprites/cards/red/card_red.png"
+	card_law.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	card_law.card_description = "Attack for [damage] damage. Improve all Law cards by 3 this combat."
 	card_law.card_type = CardData.CARD_TYPES.ATTACK
 	card_law.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -2935,7 +2946,7 @@ func add_test_cards() -> void:
 	var discard_card: CardData = CardData.new("card_discard_block")
 	discard_card.card_name = "Discard Block"
 	discard_card.card_color_id = "color_red"
-	discard_card.card_texture_path = "external/sprites/cards/red/card_red.png"
+	discard_card.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	discard_card.card_description = "Discard up to [max_card_amount] cards and add [block] block for each"
 	discard_card.card_type = CardData.CARD_TYPES.SKILL
 	discard_card.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -2970,7 +2981,7 @@ func add_test_cards() -> void:
 	var card_banish_attack: CardData = CardData.new("card_banish_attack")
 	card_banish_attack.card_name = "Banish Attack"
 	card_banish_attack.card_color_id = "color_red"
-	card_banish_attack.card_texture_path = "external/sprites/cards/red/card_red.png"
+	card_banish_attack.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	card_banish_attack.card_description = "Banish up to [max_card_amount] attack cards and do [damage] damage to all enemies for each"
 	card_banish_attack.card_type = CardData.CARD_TYPES.ATTACK
 	card_banish_attack.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -3048,7 +3059,7 @@ func add_test_cards() -> void:
 	var pick_from_discard_card: CardData = CardData.new("card_pick_from_discard")
 	pick_from_discard_card.card_name = "Pick From Discard"
 	pick_from_discard_card.card_color_id = "color_blue"
-	pick_from_discard_card.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	pick_from_discard_card.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	pick_from_discard_card.card_description = "Pick 2 cards from discard pile and add them to hand"
 	pick_from_discard_card.card_type = CardData.CARD_TYPES.SKILL
 	pick_from_discard_card.card_rarity = CardData.CARD_RARITIES.RARE
@@ -3073,7 +3084,7 @@ func add_test_cards() -> void:
 	var add_to_draw_from_discard_card: CardData = CardData.new("add_to_draw_from_discard_card")
 	add_to_draw_from_discard_card.card_name = "Pick From Discard"
 	add_to_draw_from_discard_card.card_color_id = "color_blue"
-	add_to_draw_from_discard_card.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	add_to_draw_from_discard_card.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	add_to_draw_from_discard_card.card_description = "Pick 2 cards from discard pile and randomly insert them into draw pile"
 	add_to_draw_from_discard_card.card_type = CardData.CARD_TYPES.SKILL
 	add_to_draw_from_discard_card.card_rarity = CardData.CARD_RARITIES.RARE
@@ -3099,7 +3110,7 @@ func add_test_cards() -> void:
 	var set_hand_energy_card: CardData = CardData.new("set_hand_energy_card")
 	set_hand_energy_card.card_name = "Set Hand Energy"
 	set_hand_energy_card.card_color_id = "color_red"
-	set_hand_energy_card.card_texture_path = "external/sprites/cards/red/card_red.png"
+	set_hand_energy_card.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	set_hand_energy_card.card_description = "All cards in hand cost 0 until end of turn"
 	set_hand_energy_card.card_type = CardData.CARD_TYPES.SKILL
 	set_hand_energy_card.card_rarity = CardData.CARD_RARITIES.RARE
@@ -3121,11 +3132,12 @@ func add_test_cards() -> void:
 	
 	register_rod(set_hand_energy_card)
 	
-	# transforms all other cards in hand during combat
+	# transforms all other cards	# Transforms hand into random cards
 	var transform_hand_card: CardData = CardData.new("transform_hand_card")
+	transform_hand_card.question_category = "Navitime"
 	transform_hand_card.card_name = "Transform Hand"
 	transform_hand_card.card_color_id = "color_red"
-	transform_hand_card.card_texture_path = "external/sprites/cards/red/card_red.png"
+	transform_hand_card.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	transform_hand_card.card_description = "Transforms the cards in hand"
 	transform_hand_card.card_type = CardData.CARD_TYPES.SKILL
 	transform_hand_card.card_rarity = CardData.CARD_RARITIES.RARE
@@ -3156,7 +3168,7 @@ func add_test_cards() -> void:
 	var card_right_click_transform_mode_a: CardData = CardData.new("card_right_click_transform_mode_a")
 	card_right_click_transform_mode_a.card_name = "Mode A"
 	card_right_click_transform_mode_a.card_color_id = "color_red"
-	card_right_click_transform_mode_a.card_texture_path = "external/sprites/cards/red/card_red.png"
+	card_right_click_transform_mode_a.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	card_right_click_transform_mode_a.card_description = "Attack for [damage] damage\nRight click to transform into B variant"
 	card_right_click_transform_mode_a.card_type = CardData.CARD_TYPES.ATTACK
 	card_right_click_transform_mode_a.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -3181,7 +3193,7 @@ func add_test_cards() -> void:
 	var card_right_click_transform_mode_b: CardData = CardData.new("card_right_click_transform_mode_b")
 	card_right_click_transform_mode_b.card_name = "Mode B"
 	card_right_click_transform_mode_b.card_color_id = "color_red"
-	card_right_click_transform_mode_b.card_texture_path = "external/sprites/cards/red/card_red.png"
+	card_right_click_transform_mode_b.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	card_right_click_transform_mode_b.card_description = "Block [block]\nRight click to transform into A variant"
 	card_right_click_transform_mode_b.card_type = CardData.CARD_TYPES.SKILL
 	card_right_click_transform_mode_b.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -3202,11 +3214,12 @@ func add_test_cards() -> void:
 	
 	register_rod(card_right_click_transform_mode_b)
 	
-	# draw cards and randomize cost of cards in hand
+	# draw cards and	# Randomizes cost of cards in hand
 	var randomize_hand_card: CardData = CardData.new("randomize_hand_card")
+	randomize_hand_card.question_category = "Navitime"
 	randomize_hand_card.card_name = "Randomize Card Cost"
 	randomize_hand_card.card_color_id = "color_blue"
-	randomize_hand_card.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	randomize_hand_card.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	randomize_hand_card.card_description = "Draw [draw_count] cards. Randomize the cost of cards in hand this turn"
 	randomize_hand_card.card_energy_cost = 0
 	randomize_hand_card.card_type = CardData.CARD_TYPES.SKILL
@@ -3240,7 +3253,7 @@ func add_test_cards() -> void:
 	var card_generate_shoves: CardData = CardData.new("card_generate_shoves")
 	card_generate_shoves.card_name = "Shove Dance"
 	card_generate_shoves.card_color_id = "color_green"
-	card_generate_shoves.card_texture_path = "external/sprites/cards/green/card_green.png"
+	card_generate_shoves.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	card_generate_shoves.card_description = "Create [number_of_cards] legally distinct Shoves and add them to hand"
 	card_generate_shoves.card_type = CardData.CARD_TYPES.SKILL
 	card_generate_shoves.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -3298,7 +3311,7 @@ func add_test_cards() -> void:
 	var discard_hand_card: CardData = CardData.new("card_discard_hand")
 	discard_hand_card.card_name = "Discard Hand Card"
 	discard_hand_card.card_color_id = "color_blue"
-	discard_hand_card.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	discard_hand_card.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	discard_hand_card.card_description = "Discard hand. Draw [draw_count] cards."
 	discard_hand_card.card_type = CardData.CARD_TYPES.SKILL
 	discard_hand_card.card_rarity = CardData.CARD_RARITIES.UNCOMMON
@@ -3329,7 +3342,7 @@ func add_test_cards() -> void:
 	var card_cycle_enemy_intent: CardData = CardData.new("card_cycle_enemy_intent")
 	card_cycle_enemy_intent.card_name = "Cycle Intent"
 	card_cycle_enemy_intent.card_color_id = "color_green"
-	card_cycle_enemy_intent.card_texture_path = "external/sprites/cards/green/card_green.png"
+	card_cycle_enemy_intent.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	card_cycle_enemy_intent.card_description = "Do [damage] damage and force enemy to cycle its intent."
 	card_cycle_enemy_intent.card_type = CardData.CARD_TYPES.ATTACK
 	card_cycle_enemy_intent.card_rarity = CardData.CARD_RARITIES.UNCOMMON
@@ -3351,7 +3364,7 @@ func add_test_cards() -> void:
 	var block_without_attacks_card: CardData = CardData.new("card_block_without_attacks")
 	block_without_attacks_card.card_name = "Block Without Attacks"
 	block_without_attacks_card.card_color_id = "color_green"
-	block_without_attacks_card.card_texture_path = "external/sprites/cards/green/card_green.png"
+	block_without_attacks_card.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	block_without_attacks_card.card_description = "Generate [block] Block. Cannot be played with attacks in hand."
 	block_without_attacks_card.card_type = CardData.CARD_TYPES.SKILL
 	block_without_attacks_card.card_rarity = CardData.CARD_RARITIES.UNCOMMON
@@ -3388,7 +3401,7 @@ func add_test_cards() -> void:
 	var attack_lower_cost_on_discard_card: CardData = CardData.new("attack_lower_cost_on_discard_card")
 	attack_lower_cost_on_discard_card.card_name = "Lowering Energy Attack"
 	attack_lower_cost_on_discard_card.card_color_id = "color_red"
-	attack_lower_cost_on_discard_card.card_texture_path = "external/sprites/cards/red/card_red.png"
+	attack_lower_cost_on_discard_card.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	attack_lower_cost_on_discard_card.card_energy_cost = 7
 	attack_lower_cost_on_discard_card.card_description = "Attack for [damage] damage. Cost lowered for each card discarded this turn."
 	attack_lower_cost_on_discard_card.card_type = CardData.CARD_TYPES.ATTACK
@@ -3489,7 +3502,7 @@ func add_test_cards() -> void:
 	var attack_in_center_card: CardData = CardData.new("card_attack_in_center")
 	attack_in_center_card.card_name = "Attack in Center"
 	attack_in_center_card.card_color_id = "color_green"
-	attack_in_center_card.card_texture_path = "external/sprites/cards/green/card_green.png"
+	attack_in_center_card.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	attack_in_center_card.card_description = "Attack for [damage] damage. Can only be played in center of hand."
 	attack_in_center_card.card_type = CardData.CARD_TYPES.ATTACK
 	attack_in_center_card.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -3518,7 +3531,7 @@ func add_test_cards() -> void:
 	var card_requires_adjacency: CardData = CardData.new("card_requires_adjacency")
 	card_requires_adjacency.card_name = "Attack with Adjacency"
 	card_requires_adjacency.card_color_id = "color_red"
-	card_requires_adjacency.card_texture_path = "external/sprites/cards/red/card_red.png"
+	card_requires_adjacency.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	card_requires_adjacency.card_description = "Attack for [damage] damage. Can only be played if next to at least 1 attack card."
 	card_requires_adjacency.card_type = CardData.CARD_TYPES.ATTACK
 	card_requires_adjacency.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -3547,7 +3560,7 @@ func add_test_cards() -> void:
 	var play_from_discard_card: CardData = CardData.new("card_play_from_discard")
 	play_from_discard_card.card_name = "Play From Discard"
 	play_from_discard_card.card_color_id = "color_blue"
-	play_from_discard_card.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	play_from_discard_card.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	play_from_discard_card.card_description = "Generate [block] Block. Play a card from discard pile."
 	play_from_discard_card.card_type = CardData.CARD_TYPES.SKILL
 	play_from_discard_card.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -3582,7 +3595,7 @@ func add_test_cards() -> void:
 	var card_discard_attacks_from_draw: CardData = CardData.new("card_discard_attacks_from_draw")
 	card_discard_attacks_from_draw.card_name = "Discard Attacks From Draw"
 	card_discard_attacks_from_draw.card_color_id = "color_blue"
-	card_discard_attacks_from_draw.card_texture_path = "external/sprites/cards/blue/card_blue.png"
+	card_discard_attacks_from_draw.card_texture_path = "assets/ui/card_frames/frame_skill.png"
 	card_discard_attacks_from_draw.card_description = "Discard up to the top [pickable_cards_max_amount] attack cards from your draw pile."
 	card_discard_attacks_from_draw.card_type = CardData.CARD_TYPES.SKILL
 	card_discard_attacks_from_draw.card_rarity = CardData.CARD_RARITIES.COMMON
@@ -3615,7 +3628,7 @@ func add_test_cards() -> void:
 	var play_random_from_hand_card: CardData = CardData.new("card_play_random_from_hand")
 	play_random_from_hand_card.card_name = "Play Random Hand"
 	play_random_from_hand_card.card_color_id = "color_red"
-	play_random_from_hand_card.card_texture_path = "external/sprites/cards/red/card_red.png"
+	play_random_from_hand_card.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	play_random_from_hand_card.card_description = "Play 2 cards randomly from your hand."
 	play_random_from_hand_card.card_type = CardData.CARD_TYPES.SKILL
 	play_random_from_hand_card.card_rarity = CardData.CARD_RARITIES.UNCOMMON
@@ -3666,7 +3679,7 @@ func add_test_cards() -> void:
 	var card_upgrade_card: CardData = CardData.new("card_upgrade_card")
 	card_upgrade_card.card_name = "Upgrade Cards"
 	card_upgrade_card.card_color_id = "color_green"
-	card_upgrade_card.card_texture_path = "external/sprites/cards/green/card_green.png"
+	card_upgrade_card.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	card_upgrade_card.card_description = "Select a card to upgrade permanently."
 	card_upgrade_card.card_type = CardData.CARD_TYPES.SKILL
 	card_upgrade_card.card_rarity = CardData.CARD_RARITIES.RARE
@@ -3717,7 +3730,7 @@ func add_test_cards() -> void:
 	var card_draft_random_attack: CardData = CardData.new("card_draft_random_attack")
 	card_draft_random_attack.card_name = "Draft Attack Card"
 	card_draft_random_attack.card_color_id = "color_green"
-	card_draft_random_attack.card_texture_path = "external/sprites/cards/green/card_green.png"
+	card_draft_random_attack.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	card_draft_random_attack.card_description = "Select one of 3 attack cards and add it to hand.\nIt costs 0 for the rest of combat"
 	card_draft_random_attack.card_type = CardData.CARD_TYPES.SKILL
 	card_draft_random_attack.card_rarity = CardData.CARD_RARITIES.UNCOMMON
@@ -3757,7 +3770,7 @@ func add_test_cards() -> void:
 	var card_draft_red_card: CardData = CardData.new("card_draft_red_card")
 	card_draft_red_card.card_name = "Draft Red Card"
 	card_draft_red_card.card_color_id = "color_red"
-	card_draft_red_card.card_texture_path = "external/sprites/cards/red/card_red.png"
+	card_draft_red_card.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	card_draft_red_card.card_description = "Select one of 5 red cards and add it to hand.\nIt costs 0 for the rest of combat"
 	card_draft_red_card.card_type = CardData.CARD_TYPES.SKILL
 	card_draft_red_card.card_rarity = CardData.CARD_RARITIES.UNCOMMON
@@ -3794,7 +3807,7 @@ func add_test_cards() -> void:
 	var card_draft_random_player_pool: CardData = CardData.new("card_draft_random_player_pool")
 	card_draft_random_player_pool.card_name = "Draft Random Card"
 	card_draft_random_player_pool.card_color_id = "color_white"
-	card_draft_random_player_pool.card_texture_path = "external/sprites/cards/green/card_green.png"
+	card_draft_random_player_pool.card_texture_path = "assets/ui/card_frames/frame_power.png"
 	card_draft_random_player_pool.card_description = "Add a random card from player's card pool to your hand. It costs 0"
 	card_draft_random_player_pool.card_type = CardData.CARD_TYPES.SKILL
 	card_draft_random_player_pool.card_rarity = CardData.CARD_RARITIES.RARE
@@ -3834,7 +3847,7 @@ func add_test_cards() -> void:
 	var card_grant_energy: CardData = CardData.new("card_grant_energy")
 	card_grant_energy.card_name = "Energy Card"
 	card_grant_energy.card_color_id = "color_red"
-	card_grant_energy.card_texture_path = "external/sprites/cards/red/card_red.png"
+	card_grant_energy.card_texture_path = "assets/ui/card_frames/frame_attack.png"
 	card_grant_energy.card_description = "Gives [energy_icon][energy_icon] when played"
 	card_grant_energy.card_is_playable = true
 	card_grant_energy.card_energy_cost = 0

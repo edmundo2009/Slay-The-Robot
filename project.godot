@@ -21,6 +21,7 @@ config/icon="uid://8kopj5luv8dc"
 
 [autoload]
 
+GameManager="*res://autoload/GameManager.gd"
 Signals="*res://autoload/Signals.gd"
 Scenes="*res://autoload/Scenes.gd"
 Scripts="*res://autoload/Scripts.gd"
@@ -32,7 +33,6 @@ ActionGenerator="*res://autoload/ActionGenerator.gd"
 DebugLogger="*res://autoload/DebugLogger.gd"
 UIDGenerator="*res://autoload/UIDGenerator.gd"
 RuntimeTest="*res://addons/runtime_test/runtime_test.gd"
-GameManager="*res://autoload/GameManager.gd"
 QuestionFetcher="*res://autoload/QuestionFetcher.gd"
 
 [debug]
