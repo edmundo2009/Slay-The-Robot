@@ -452,3 +452,16 @@ func end_turn_animation() -> void:
 	
 func start_turn_animation() -> void:
 	combat_animation_player.play("start_turn")
+
+func shake_screen(intensity: float = 20.0, duration: float = 0.5) -> void:
+	var original_pos = position
+	var tween = create_tween()
+	var steps = 10
+	var step_duration = duration / steps
+	
+	for i in range(steps):
+		var offset = Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity))
+		tween.tween_property(self, "position", original_pos + offset, step_duration)
+		
+	tween.tween_property(self, "position", original_pos, 0.0)
+

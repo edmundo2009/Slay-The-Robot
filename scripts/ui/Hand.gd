@@ -281,6 +281,30 @@ func _play_card(card_play_request: CardPlayRequest) -> void:
 	if card_play_request.card_data == null:
 		breakpoint
 		return	
+
+	# --- MENKYO QUIZ INTERCEPT ---
+	# Check if we should interrupt for a quiz
+	if GameManager.current_game_mode == GameManager.GameMode.STUDY:
+		var q_cat = card_play_request.card_data.question_category
+		if q_cat != "":
+			var question = QuestionFetcher.get_random_question(q_cat)
+			if not question.is_empty():
+				# Create and show popup
+				var popup = load("res://scenes/ui/QuizPopup.tscn").instantiate()
+				get_tree().root.add_child(popup)
+				popup.setup(question)
+				
+				# Wait for answer
+				var is_correct = await popup.answer_selected
+				
+				if is_correct:
+					# Simple feedback for now
+					print("Quiz Correct!")
+				else:
+					# Visual feedback
+					combat.shake_screen()
+					# TODO: Implement deeper penalty (e.g. block card play?)
+	# -----------------------------
 	
 	# store the state of the hand at play time in the play request
 	card_play_request.hand_at_play_time = Global.player_data.player_hand.duplicate(false)

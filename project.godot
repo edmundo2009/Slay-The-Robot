@@ -31,6 +31,9 @@ ActionHandler="*res://autoload/ActionHandler.gd"
 ActionGenerator="*res://autoload/ActionGenerator.gd"
 DebugLogger="*res://autoload/DebugLogger.gd"
 UIDGenerator="*res://autoload/UIDGenerator.gd"
+RuntimeTest="*res://addons/runtime_test/runtime_test.gd"
+GameManager="*res://autoload/GameManager.gd"
+QuestionFetcher="*res://autoload/QuestionFetcher.gd"
 
 [debug]
 
@@ -63,3 +66,7 @@ limits/debugger/max_chars_per_second=131072
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/runtime_test/plugin.cfg")

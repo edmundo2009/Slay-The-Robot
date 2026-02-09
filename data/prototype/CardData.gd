@@ -9,6 +9,9 @@ var parent_card: CardData = null	# the parent card in the player's true deck tha
 @export var card_keyword_object_ids: Array[String] = [] # keywords (mechanics with tooltips) displayed when this card is hovered over
 @export var card_color_id: String = "color_green"
 
+### Quiz Integration
+@export var question_category: String = "" # Category path tag for fetching questions (e.g., "Navitime/Signs")
+
 ### Card Energy
 # card energies
 @export var card_energy_cost: int = 1 : set = set_card_energy_cost # The raw energy cost of the card before modifiers. Generally shadowed by the others. See: get_card_energy_cost()
