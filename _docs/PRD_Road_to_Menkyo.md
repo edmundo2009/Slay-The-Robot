@@ -29,12 +29,12 @@ By gamifying this experience through a proven deckbuilder format, we leverage:
 
 ### 2.1 Target Audience
 
-| Segment | Description |
-|---------|-------------|
-| **Primary** | **Foreigners living in Japan** who need to take the menkyo test in Japanese |
-| **Secondary** | Japanese residents preparing for the Menkyo Shiken (ages 18-30) |
-| **Secondary** | Japanese language learners studying traffic vocabulary |
-| **Tertiary** | Fans of roguelike deckbuilders looking for unique themes |
+| Segment       | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| **Primary**   | **Foreigners living in Japan** who need to take the menkyo test in Japanese |
+| **Secondary** | Japanese residents preparing for the Menkyo Shiken (ages 18-30)             |
+| **Secondary** | Japanese language learners studying traffic vocabulary                      |
+| **Tertiary**  | Fans of roguelike deckbuilders looking for unique themes                    |
 
 ### 2.2 Bilingual Support System (JP ↔ EN)
 
@@ -49,11 +49,11 @@ Tap any Japanese term to see:
 
 #### Language Modes
 
-| Mode | Description |
-|------|-------------|
-| **JP + EN** | Both languages shown (default for learning) |
-| **JP Only** | Exam simulation mode (authentic test experience) |
-| **EN Assist** | English hints available on demand |
+| Mode          | Description                                      |
+|---------------|--------------------------------------------------|
+| **JP + EN**   | Both languages shown (default for learning)      |
+| **JP Only**   | Exam simulation mode (authentic test experience) |
+| **EN Assist** | English hints available on demand                |
 
 ### 2.3 Dual-Mode Architecture
 The game supports two distinct modes controlled by a global switch:
@@ -65,10 +65,10 @@ graph LR
     B -->|STUDY| D[Passive Learning<br/>No Pressure/Infinite Retries]
 ```
 
-| Mode | HP | Timer | Enemy Attacks | Use Case |
-|------|-----|-------|---------------|----------|
-| **GAME** | Limited | Active | Yes | Challenge runs, testing knowledge |
-| **STUDY** | Infinite | Disabled | No | Learning, memorization, review |
+| Mode      | HP       | Timer    | Enemy Attacks | Use Case                          |
+|-----------|----------|----------|---------------|-----------------------------------|
+| **GAME**  | Limited  | Active   | Yes           | Challenge runs, testing knowledge |
+| **STUDY** | Infinite | Disabled | No            | Learning, memorization, review    |
 
 ---
 
@@ -76,16 +76,16 @@ graph LR
 
 ### 3.1 Core Metaphor
 
-| Game Concept | Menkyo Translation |
-|--------------|---------------------|
-| Player HP | 精神力 (Mental Stamina / Focus) |
-| Enemy | Traffic Situation / Exam Question |
-| Deck | Knowledge Base (Concepts & Logics) |
-| Attack Cards | Answer Logic (stopping rules, sign identification) |
-| Skill Cards | Study Utilities (process of elimination, time extension) |
-| Power Cards | Passive Buffs (prediction abilities, combo bonuses) |
-| Energy | Focus Points (mental resources per turn) |
-| Damage | Knowledge Damage (progress toward solving a question) |
+| Game Concept | Menkyo Translation                                       |
+|--------------|----------------------------------------------------------|
+| Player HP    | 精神力 (Mental Stamina / Focus)                          |
+| Enemy        | Traffic Situation / Exam Question                        |
+| Deck         | Knowledge Base (Concepts & Logics)                       |
+| Attack Cards | Answer Logic (stopping rules, sign identification)       |
+| Skill Cards  | Study Utilities (process of elimination, time extension) |
+| Power Cards  | Passive Buffs (prediction abilities, combo bonuses)      |
+| Energy       | Focus Points (mental resources per turn)                 |
+| Damage       | Knowledge Damage (progress toward solving a question)    |
 
 ### 3.2 Battle System (The Quiz Mechanic)
 
@@ -127,28 +127,28 @@ sequenceDiagram
 
 #### Card Categories
 
-| Type | Color | Icon | Function |
-|------|-------|------|----------|
-| **Attack** | Red | ガベル (Gavel) / Checkmark | Deal Knowledge Damage when answered correctly |
-| **Skill** | Blue | Brain / Deep Breath | Utility: draw cards, gain block, manipulate deck |
-| **Power** | Gold | Connecting Gears | Persistent buffs for the combat |
+| Type       | Color | Icon                       | Function                                         |
+|------------|-------|----------------------------|--------------------------------------------------|
+| **Attack** | Red   | ガベル (Gavel) / Checkmark | Deal Knowledge Damage when answered correctly    |
+| **Skill**  | Blue  | Brain / Deep Breath        | Utility: draw cards, gain block, manipulate deck |
+| **Power**  | Gold  | Connecting Gears           | Persistent buffs for the combat                  |
 
 #### Deck Archetypes
 
-| Archetype | Focus | Playstyle |
-|-----------|-------|-----------|
-| **Defensive/Safety** | 徐行 (Slow Down), 一時停止 (Stop) | High block, patient, 100% accuracy |
-| **Rules Lawyer** | Numbers (30m, 5t, speed limits) | High risk/reward, one-shot potential |
-| **Hazard Prediction** | 危険予測 (Kiken Yosoku) visuals | Generate "Insight" for auto-solve |
+| Archetype             | Focus                             | Playstyle                            |
+|-----------------------|-----------------------------------|--------------------------------------|
+| **Defensive/Safety**  | 徐行 (Slow Down), 一時停止 (Stop) | High block, patient, 100% accuracy   |
+| **Rules Lawyer**      | Numbers (30m, 5t, speed limits)   | High risk/reward, one-shot potential |
+| **Hazard Prediction** | 危険予測 (Kiken Yosoku) visuals   | Generate "Insight" for auto-solve    |
 
 ### 3.5 Status Effects
 
-| Effect | Icon | Description |
-|--------|------|-------------|
-| **Confused** | 😵 | Answer buttons are shuffled/blurred |
-| **Rushed** | ⏱️ | Half time to answer |
-| **Confident** | 💪 | Next correct answer fully heals HP |
-| **Cursed** | 🃏 | Trick Question cards shuffled into deck |
+| Effect        | Icon | Description                             |
+|---------------|------|-----------------------------------------|
+| **Confused**  | 😵   | Answer buttons are shuffled/blurred     |
+| **Rushed**    | ⏱️    | Half time to answer                     |
+| **Confident** | 💪   | Next correct answer fully heals HP      |
+| **Cursed**    | 🃏   | Trick Question cards shuffled into deck |
 
 ---
 
@@ -158,14 +158,14 @@ sequenceDiagram
 
 The map represents the **curriculum roadmap** - a branching scroll with road-themed visuals.
 
-| Node Type | Icon | Description |
-|-----------|------|-------------|
-| **Normal Combat** | 🚦 Traffic Light | 5-question quiz on general rules |
-| **Elite Combat** | 👮 Police Officer | 10-question hard quiz (specific topic) |
-| **Rest Site** | 🅿️ Parking Sign | Heal HP or Upgrade a card |
-| **Merchant** | ⛽ Gas Station | Buy cards/relics with Focus Points |
-| **Event** | ❓ Question Mark | Random moral dilemma or bonus |
-| **Boss** | 🏛️ Exam Center | 50-question endurance run |
+| Node Type         | Icon              | Description                            |
+|-------------------|-------------------|----------------------------------------|
+| **Normal Combat** | 🚦 Traffic Light  | 5-question quiz on general rules       |
+| **Elite Combat**  | 👮 Police Officer | 10-question hard quiz (specific topic) |
+| **Rest Site**     | 🅿️ Parking Sign   | Heal HP or Upgrade a card              |
+| **Merchant**      | ⛽ Gas Station     | Buy cards/relics with Focus Points     |
+| **Event**         | ❓ Question Mark   | Random moral dilemma or bonus          |
+| **Boss**          | 🏛️ Exam Center    | 50-question endurance run              |
 
 ### 4.2 Progression Structure
 
@@ -187,12 +187,12 @@ graph TD
 
 #### Relic Examples
 
-| Relic | Effect |
-|-------|--------|
-| **Baby on Board Sticker** | Start combat with +1 Energy |
-| **Glasses** | Keywords highlighted in questions |
-| **Lucky Omamori** | First wrong answer each combat is forgiven |
-| **Green Light Charm** | First correct answer deals double damage |
+| Relic                     | Effect                                     |
+|---------------------------|--------------------------------------------|
+| **Baby on Board Sticker** | Start combat with +1 Energy                |
+| **Glasses**               | Keywords highlighted in questions          |
+| **Lucky Omamori**         | First wrong answer each combat is forgiven |
+| **Green Light Charm**     | First correct answer deals double damage   |
 
 ---
 
@@ -207,13 +207,13 @@ graph TD
 
 ### 5.1 Data Sources Overview
 
-| Source | Cards | Type | Structure | Images |
-|--------|-------|------|-----------|--------|
-| **navitime.json** | 2,172 | True/False (90.5%), Image Match (9.5%) | Exam-based (69 categories) | 619 (28.5%) |
-| **scrape.json** | 1,303 | True/False (100%) | Topic-based (98 categories) | 413 (31.7%) |
-| **trips.json** | 624 | Quiz (~80%), Flashcard (~20%) | 仮免許 (Provisional) | Mixed |
-| **tripsfull.json** | 1,364 | Quiz (~90%), Flashcard (~10%) | 本免許 (Full License) | Mixed |
-| **TOTAL** | **5,463** | | | ~1,000+ |
+| Source             | Cards     | Type                                   | Structure                   | Images      |
+|--------------------|-----------|----------------------------------------|-----------------------------|-------------|
+| **navitime.json**  | 2,172     | True/False (90.5%), Image Match (9.5%) | Exam-based (69 categories)  | 619 (28.5%) |
+| **scrape.json**    | 1,303     | True/False (100%)                      | Topic-based (98 categories) | 413 (31.7%) |
+| **trips.json**     | 624       | Quiz (~80%), Flashcard (~20%)          | 仮免許 (Provisional)        | Mixed       |
+| **tripsfull.json** | 1,364     | Quiz (~90%), Flashcard (~10%)          | 本免許 (Full License)       | Mixed       |
+| **TOTAL**          | **5,463** |                                        |                             | ~1,000+     |
 
 ### 5.2 Existing Flashcard Schema
 
@@ -241,23 +241,23 @@ All JSON files already conform to the Universal Flashcard Schema:
 
 ### 5.3 Question Types for Game Integration
 
-| Type | Game Usage | Card Mapping |
-|------|------------|---------------|
-| **true_false** (○/×) | Standard quiz intercept | All Attack/Skill cards |
-| **image_match** | Hazard Prediction (危険予測) | Kiken Yosoku cards |
-| **flashcard** (暗記カード) | Sign recognition, memorization | Power/Buff cards |
+| Type                       | Game Usage                     | Card Mapping           |
+|----------------------------|--------------------------------|------------------------|
+| **true_false** (○/×)       | Standard quiz intercept        | All Attack/Skill cards |
+| **image_match**            | Hazard Prediction (危険予測)   | Kiken Yosoku cards     |
+| **flashcard** (暗記カード) | Sign recognition, memorization | Power/Buff cards       |
 
 ### 5.4 Category Mapping to Game Archetypes
 
-| Category (JP) | English | Game Archetype |
-|---------------|---------|----------------|
-| 標識 / 標示 | Signs / Road Markings | Sign Identification deck |
-| 駐車 / 停車 | Parking / Stopping | Parking Rules deck |
-| 交差点 | Intersections | Priority/Right-of-Way deck |
-| 徐行 / 一時停止 | Slow Down / Stop | Defensive deck |
-| 高速道路 | Highway | Highway Rules deck |
-| 仮免演習 / 本免演習 | Exam Practice | Boss Battles |
-| 暗記カード | Memorization Cards | Flashcard/Power cards |
+| Category (JP)       | English               | Game Archetype             |
+|---------------------|-----------------------|----------------------------|
+| 標識 / 標示         | Signs / Road Markings | Sign Identification deck   |
+| 駐車 / 停車         | Parking / Stopping    | Parking Rules deck         |
+| 交差点              | Intersections         | Priority/Right-of-Way deck |
+| 徐行 / 一時停止     | Slow Down / Stop      | Defensive deck             |
+| 高速道路            | Highway               | Highway Rules deck         |
+| 仮免演習 / 本免演習 | Exam Practice         | Boss Battles               |
+| 暗記カード          | Memorization Cards    | Flashcard/Power cards      |
 
 ### 5.5 Card ↔ Question Linking Strategy
 
@@ -277,25 +277,25 @@ func get_question_for_card(card: CardData) -> Dictionary:
 
 ### 5.6 Image Asset Consolidation
 
-| Source | Unique Images | Duplicates Removed |
-|--------|---------------|--------------------|
-| navitime | 194 | 39 |
-| trips | 202 | 23 |
-| trips_full | 133 | 147 |
-| **Total** | **529** | **209** |
+| Source     | Unique Images | Duplicates Removed |
+|------------|---------------|--------------------|
+| navitime   | 194           | 39                 |
+| trips      | 202           | 23                 |
+| trips_full | 133           | 147                |
+| **Total**  | **529**       | **209**            |
 
 Images are prefixed by source: `navitime_*.png`, `trips_*.png`, `trips_full_*.png`
 
 ### 5.7 Content Assets Status
 
-| Asset Type | Status | Location |
-|------------|--------|----------|
-| ✅ Question JSON | Ready | `_data_normalized/*.json` |
-| ✅ Images (deduplicated) | Ready | `_assets/images/` (529 files) |
-| ✅ Path Mapping | Ready | `_assets/image_path_mapping.json` |
-| ⚠️ JP↔EN Glossary | Separate project | Need merge |
-| ❌ Game UI assets | Not started | Need creation |
-| ❌ Audio (SFX) | Not started | Need creation |
+| Asset Type              | Status           | Location                          |
+|-------------------------|------------------|-----------------------------------|
+| ✅ Question JSON         | Ready            | `_data_normalized/*.json`         |
+| ✅ Images (deduplicated) | Ready            | `_assets/images/` (529 files)     |
+| ✅ Path Mapping          | Ready            | `_assets/image_path_mapping.json` |
+| ⚠️ JP↔EN Glossary        | Separate project | Need merge                        |
+| ❌ Game UI assets        | Not started      | Need creation                     |
+| ❌ Audio (SFX)           | Not started      | Need creation                     |
 
 ---
 
@@ -303,12 +303,12 @@ Images are prefixed by source: `navitime_*.png`, `trips_*.png`, `trips_full_*.pn
 
 ### 6.1 Aesthetic Guidelines
 
-| Aspect | Specification |
-|--------|---------------|
-| **Style** | Clean, Minimal, Japanese Modern |
-| **Palette** | Pastel (Mint Green, Soft Blue, Cream, Light Wood) |
-| **Purpose** | Reduce study anxiety, feel calming |
-| **Shape Language** | Rounded corners, soft edges |
+| Aspect             | Specification                                     |
+|--------------------|---------------------------------------------------|
+| **Style**          | Clean, Minimal, Japanese Modern                   |
+| **Palette**        | Pastel (Mint Green, Soft Blue, Cream, Light Wood) |
+| **Purpose**        | Reduce study anxiety, feel calming                |
+| **Shape Language** | Rounded corners, soft edges                       |
 
 ### 6.2 Key Visual Elements
 
@@ -322,22 +322,22 @@ Images are prefixed by source: `navitime_*.png`, `trips_*.png`, `trips_full_*.pn
 - **Font:** Noto Sans JP (critical for Japanese text)
 
 #### Icons
-| Original (Slay-Robot) | Menkyo Version |
-|----------------------|----------------|
-| Sword (Attack) | Gavel / Checkmark |
-| Shield (Block) | Safety Shield / Helmet |
-| Energy | Brain Power / Fuel Gauge |
+| Original (Slay-Robot) | Menkyo Version           |
+|-----------------------|--------------------------|
+| Sword (Attack)        | Gavel / Checkmark        |
+| Shield (Block)        | Safety Shield / Helmet   |
+| Energy                | Brain Power / Fuel Gauge |
 
 ### 6.3 Map Visual Transformation
 
-| Element | Current | Target |
-|---------|---------|--------|
-| Background | Dark texture | Parchment/scroll paper |
-| Path Lines | Abstract lines | Gray roads with dashed white lines |
-| Node: Enemy | Generic | 🚦 Traffic light (red) |
-| Node: Elite | Generic | 👮 Police officer |
-| Node: Rest | Generic | 🅿️ Parking sign |
-| Node: Boss | Generic | 🏛️ Exam center building |
+| Element     | Current        | Target                             |
+|-------------|----------------|------------------------------------|
+| Background  | Dark texture   | Parchment/scroll paper             |
+| Path Lines  | Abstract lines | Gray roads with dashed white lines |
+| Node: Enemy | Generic        | 🚦 Traffic light (red)             |
+| Node: Elite | Generic        | 👮 Police officer                  |
+| Node: Rest  | Generic        | 🅿️ Parking sign                    |
+| Node: Boss  | Generic        | 🏛️ Exam center building            |
 
 ---
 
@@ -364,12 +364,12 @@ Images are prefixed by source: `navitime_*.png`, `trips_*.png`, `trips_full_*.pn
 
 ### 8.1 Framework Advantages (Slay-The-Robot)
 
-| Component | Benefit for Menkyo |
-|-----------|-------------------|
-| **Hand Logic** | Automatic card fanning with hover effects |
-| **Action Queue** | Easy quiz intercept insertion (pause before damage) |
-| **Data Pipeline** | Clean JSON import for 500+ questions |
-| **Save System** | Track player progress, deck, relics |
+| Component         | Benefit for Menkyo                                  |
+|-------------------|-----------------------------------------------------|
+| **Hand Logic**    | Automatic card fanning with hover effects           |
+| **Action Queue**  | Easy quiz intercept insertion (pause before damage) |
+| **Data Pipeline** | Clean JSON import for 500+ questions                |
+| **Save System**   | Track player progress, deck, relics                 |
 
 ### 8.2 GameManager.gd Specification
 
@@ -472,21 +472,21 @@ func get_explanation_display() -> String:
 
 ### 8.4 Key Files to Modify
 
-| File | Purpose | Modification |
-|------|---------|--------------|
-| GameManager.gd | Global state | Implement full specification above |
-| CardData.gd | Card schema | Add `question_category: String` field only |
-| BattleScene.gd | Combat flow | Implement quiz intercept logic |
-| MapNode.tscn | Map visuals | Replace icons with traffic themes |
+| File           | Purpose      | Modification                               |
+|----------------|--------------|--------------------------------------------|
+| GameManager.gd | Global state | Implement full specification above         |
+| CardData.gd    | Card schema  | Add `question_category: String` field only |
+| BattleScene.gd | Combat flow  | Implement quiz intercept logic             |
+| MapNode.tscn   | Map visuals  | Replace icons with traffic themes          |
 
 ### 8.5 New Scenes Required
 
-| Scene | Purpose |
-|-------|--------|
-| `QuizPopup.tscn` | Modal UI for displaying question + answers |
-| `GlossaryPopup.tscn` | Tap-to-learn term definition overlay |
-| `ResultStamp.tscn` | ○/✕ animation overlay |
-| `ExplanationPanel.tscn` | Post-answer explanation (bilingual) |
+| Scene                   | Purpose                                    |
+|-------------------------|--------------------------------------------|
+| `QuizPopup.tscn`        | Modal UI for displaying question + answers |
+| `GlossaryPopup.tscn`    | Tap-to-learn term definition overlay       |
+| `ResultStamp.tscn`      | ○/✕ animation overlay                      |
+| `ExplanationPanel.tscn` | Post-answer explanation (bilingual)        |
 
 ---
 
@@ -530,24 +530,24 @@ func get_explanation_display() -> String:
 
 ## 10. Success Metrics
 
-| Metric | Target |
-|--------|--------|
-| Average session length | 15+ minutes |
-| Daily active users | Track via telemetry |
-| Questions answered per session | 50+ |
-| User retention (D7) | 30%+ |
-| Exam pass rate (self-reported) | Survey post-exam |
+| Metric                         | Target              |
+|--------------------------------|---------------------|
+| Average session length         | 15+ minutes         |
+| Daily active users             | Track via telemetry |
+| Questions answered per session | 50+                 |
+| User retention (D7)            | 30%+                |
+| Exam pass rate (self-reported) | Survey post-exam    |
 
 ---
 
 ## 11. Risks & Mitigations
 
-| Risk | Impact | Mitigation |
-|------|--------|------------|
-| Questions become stale | Low engagement | DLC question packs via JSON patching |
-| Too hard / frustrating | User churn | Study Mode as safe space, difficulty tuning |
-| Japanese text rendering | Broken UI | Ensure Noto Sans JP in project settings |
-| Question accuracy | Trust issues | Source from official study materials, community review |
+| Risk                    | Impact         | Mitigation                                             |
+|-------------------------|----------------|--------------------------------------------------------|
+| Questions become stale  | Low engagement | DLC question packs via JSON patching                   |
+| Too hard / frustrating  | User churn     | Study Mode as safe space, difficulty tuning            |
+| Japanese text rendering | Broken UI      | Ensure Noto Sans JP in project settings                |
+| Question accuracy       | Trust issues   | Source from official study materials, community review |
 
 ---
 
@@ -563,29 +563,29 @@ func get_explanation_display() -> String:
 
 ## Appendix A: Glossary
 
-| Japanese | Reading | English |
-|----------|---------|---------|
-| 免許 | Menkyo | License |
+| Japanese     | Reading             | English               |
+|--------------|---------------------|-----------------------|
+| 免許         | Menkyo              | License               |
 | 運転免許試験 | Unten Menkyo Shiken | Driver's License Exam |
-| ひっかけ問題 | Hikkake Mondai | Trick Question |
-| 危険予測 | Kiken Yosoku | Hazard Prediction |
-| 徐行 | Jokou | Slow Down |
-| 一時停止 | Ichiji Teishi | Full Stop |
-| 仮免 | Karimen | Provisional License |
-| 本免 | Honmen | Full License |
-| 精神力 | Seishinryoku | Mental Stamina |
+| ひっかけ問題 | Hikkake Mondai      | Trick Question        |
+| 危険予測     | Kiken Yosoku        | Hazard Prediction     |
+| 徐行         | Jokou               | Slow Down             |
+| 一時停止     | Ichiji Teishi       | Full Stop             |
+| 仮免         | Karimen             | Provisional License   |
+| 本免         | Honmen              | Full License          |
+| 精神力       | Seishinryoku        | Mental Stamina        |
 
 ---
 
 ## Appendix B: Key Framework Files
 
-| Path | Description |
-|------|-------------|
+| Path        | Description                                 |
+|-------------|---------------------------------------------|
 | `autoload/` | Global singletons (GameManager, SaveSystem) |
-| `scripts/` | Core game logic (~386 files) |
-| `scenes/` | Scene templates (~32 scenes) |
-| `data/` | Card/enemy data resources (~72 items) |
-| `themes/` | UI themes and stylesheets |
+| `scripts/`  | Core game logic (~386 files)                |
+| `scenes/`   | Scene templates (~32 scenes)                |
+| `data/`     | Card/enemy data resources (~72 items)       |
+| `themes/`   | UI themes and stylesheets                   |
 
 ---
 
