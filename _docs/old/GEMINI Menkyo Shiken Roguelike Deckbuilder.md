@@ -2,7 +2,7 @@
 This is a brilliant concept. The Japanese driver’s license exam (*menkyo shiken*) is notorious for its trick questions (*hikkake mondai*) and the sheer volume of memorization required. Gamifying it as a **Roguelike Deckbuilder** (like *Slay the Spire*) is a perfect way to make the repetitive drilling addictive.
 
 Based on the images you provided and the mechanics of the genre, here is a breakdown of how to design **"Road to Menkyo: The Roguelike"** (Working Title).
-![[unnamed 1.jpg]]
+
 ### 1. The Core Metaphor
 *   **The Player (Driver):** You are a student driver.
 *   **HP (Mental Stamina):** Your focus. If this hits 0, you "fail" the study session and have to restart the run.
